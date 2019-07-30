@@ -77,8 +77,8 @@
             this.cmbAlgorithm.Items.AddRange(new object[] {
             "MD5",
             "SHA-1",
-            "SHA-2",
             "SHA-256",
+            "SHA-384",
             "SHA-512"});
             this.cmbAlgorithm.Location = new System.Drawing.Point(83, 149);
             this.cmbAlgorithm.Name = "cmbAlgorithm";

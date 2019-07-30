@@ -44,6 +44,54 @@ namespace Hash_Checker
             }
         }
 
+        static String SHA1Check(String filePath)
+        {
+            using (var sha1 = SHA1.Create())
+            {
+                using (var openFile = File.OpenRead(filePath))
+                {
+                    var hash = sha1.ComputeHash(openFile);
+                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                }
+            }
+        }
+
+        static String SHA256Check(String filePath)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                using (var openFile = File.OpenRead(filePath))
+                {
+                    var hash = sha256.ComputeHash(openFile);
+                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                }
+            }
+        }
+
+        static String SHA384Check(String filePath)
+        {
+            using (var sha384 = SHA384.Create())
+            {
+                using (var openFile = File.OpenRead(filePath))
+                {
+                    var hash = sha384.ComputeHash(openFile);
+                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                }
+            }
+        }
+
+        static String SHA512Check(String filePath)
+        {
+            using (var sha512 = SHA512.Create())
+            {
+                using (var openFile = File.OpenRead(filePath))
+                {
+                    var hash = sha512.ComputeHash(openFile);
+                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                }
+            }
+        }
+
         private void BtnGo_Click(object sender, EventArgs e)
         {
             //Assigns all the text boxes on the form to variables.
@@ -58,23 +106,19 @@ namespace Hash_Checker
             }
             else if (cmbAlgorithm.Text == "SHA-1")
             {
-                MessageBox.Show("Algorithm not supported yet");
-                return;
-            }
-            else if (cmbAlgorithm.Text == "SHA-2")
-            {
-                MessageBox.Show("Algorithm not supported yet");
-                return;
+                newHash = SHA1Check(filePath);
             }
             else if (cmbAlgorithm.Text == "SHA-256")
             {
-                MessageBox.Show("Algorithm not supported yet");
-                return;
+                newHash = SHA256Check(filePath);
+            }
+            else if (cmbAlgorithm.Text == "SHA-384")
+            {
+                newHash = SHA384Check(filePath);
             }
             else if (cmbAlgorithm.Text == "SHA-512")
             {
-                MessageBox.Show("Algorithm not supported yet");
-                return;
+                newHash = SHA512Check(filePath);
             }
 
             //Displays the hash made into the text box. 
