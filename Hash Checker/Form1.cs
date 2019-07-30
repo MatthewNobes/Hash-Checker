@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
+using System.IO;
+
 
 namespace Hash_Checker
 {
@@ -21,10 +24,25 @@ namespace Hash_Checker
 
         private void TxtOriginalHash_TextChanged(object sender, EventArgs e)
         {
-       
+            String newHash = "0123456789ABCDEF";
+            string OriginalHash = txtOriginalHash.Text;
             if (cmbAlgorithm.Text == "MD5")
             {
-                MessageBox.Show("md5 work");
+                string source = txtFilePath.Text;
+                
+                newHash = MD5Check(source);
+
+
+                bool Matches = HashComparison(newHash, OriginalHash);
+                if (Matches == true)
+                {
+                    txtSafeToUse.Text = "Safe to use";
+                }
+                else
+                {
+                    txtSafeToUse.Text = "Not safe to use";
+                }
+                txtResultHash.Text = newHash;
 
             }
             else if (cmbAlgorithm.Text == "SHA-1")
@@ -45,7 +63,8 @@ namespace Hash_Checker
             }
         }
         
-        public static bool HashComparison(this String newHash, String OriginalHash)
+        public static bool HashComparison(String newHash, String OriginalHash)
+
         {
             bool Match = false;
             if (OriginalHash == newHash)
@@ -57,14 +76,26 @@ namespace Hash_Checker
                 return Match;
             }
         }
+
+        static String MD5Check(String fileName)
+        {
+
+            using (var md5 = MD5.Create())
+            {
+                using (var stream = File.OpenRead(fileName))
+                {
+                    var hash = md5.ComputeHash(stream);
+                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                }
+            }
+
+        
+
+        }
     }
 
     public static class HashChecks
     {
-        public static String MD5Check(this string newHash)
-        {
 
-            return newHash;
-        }
     }
 }
