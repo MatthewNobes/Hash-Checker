@@ -21,81 +21,74 @@ namespace Hash_Checker
 
 
         }
+        
 
-        private void TxtOriginalHash_TextChanged(object sender, EventArgs e)
+        static String MD5Check(String filePath)
         {
-            String newHash = "0123456789ABCDEF";
+            try
+            {
+                using (var md5 = MD5.Create())
+                {
+                    using (var openFile = File.OpenRead(filePath))
+                    {
+                        var hash = md5.ComputeHash(openFile);
+                        return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                    }
+                }
+            }
+            catch (InvalidCastException e)
+            {
+                //runs if the code is unable to create an MD5 hash.
+                MessageBox.Show("Unable to calculate MD5");
+                return "";
+            }
+        }
+
+        private void BtnGo_Click(object sender, EventArgs e)
+        {
+            //Assigns all the text boxes on the form to variables.
+            string newHash = "0123456789ABCDEF";
             string OriginalHash = txtOriginalHash.Text;
+            string filePath = txtFilePath.Text;
+
             if (cmbAlgorithm.Text == "MD5")
             {
-                string source = txtFilePath.Text;
-                
-                newHash = MD5Check(source);
-
-
-                bool Matches = HashComparison(newHash, OriginalHash);
-                if (Matches == true)
-                {
-                    txtSafeToUse.Text = "Safe to use";
-                }
-                else
-                {
-                    txtSafeToUse.Text = "Not safe to use";
-                }
-                txtResultHash.Text = newHash;
-
+                //Runs the function for creating an MD5 for the file selected.
+                newHash = MD5Check(filePath);
             }
             else if (cmbAlgorithm.Text == "SHA-1")
             {
-                MessageBox.Show("SHA-1");
+                MessageBox.Show("Algorithm not supported yet");
+                return;
             }
             else if (cmbAlgorithm.Text == "SHA-2")
             {
-                MessageBox.Show("SHA-2");
+                MessageBox.Show("Algorithm not supported yet");
+                return;
             }
             else if (cmbAlgorithm.Text == "SHA-256")
             {
-                MessageBox.Show("SHA-256");
+                MessageBox.Show("Algorithm not supported yet");
+                return;
             }
             else if (cmbAlgorithm.Text == "SHA-512")
             {
-                MessageBox.Show("SHA-512");
+                MessageBox.Show("Algorithm not supported yet");
+                return;
             }
-        }
-        
-        public static bool HashComparison(String newHash, String OriginalHash)
 
-        {
-            bool Match = false;
+            //Displays the hash made into the text box. 
+            txtResultHash.Text = newHash;
+
+            //Comapres the calculated hash to the given hash and adjusts text boxes where necassary.
             if (OriginalHash == newHash)
             {
-                return Match = true;
+                txtSafeToUse.Text = "Safe to use";
             }
             else
             {
-                return Match;
+                txtSafeToUse.Text = "Not safe to use";
             }
         }
-
-        static String MD5Check(String fileName)
-        {
-
-            using (var md5 = MD5.Create())
-            {
-                using (var stream = File.OpenRead(fileName))
-                {
-                    var hash = md5.ComputeHash(stream);
-                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
-                }
-            }
-
-        
-
-        }
-    }
-
-    public static class HashChecks
-    {
-
     }
 }

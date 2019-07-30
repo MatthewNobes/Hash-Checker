@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grbHashInfo = new System.Windows.Forms.GroupBox();
+            this.btnGo = new System.Windows.Forms.Button();
             this.cmbAlgorithm = new System.Windows.Forms.ComboBox();
             this.lblAlgorithm = new System.Windows.Forms.Label();
             this.lblFilePath = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@
             // 
             // grbHashInfo
             // 
+            this.grbHashInfo.Controls.Add(this.btnGo);
             this.grbHashInfo.Controls.Add(this.cmbAlgorithm);
             this.grbHashInfo.Controls.Add(this.lblAlgorithm);
             this.grbHashInfo.Controls.Add(this.lblFilePath);
@@ -59,6 +61,16 @@
             this.grbHashInfo.TabStop = false;
             this.grbHashInfo.Text = "Hash Information";
             // 
+            // btnGo
+            // 
+            this.btnGo.Location = new System.Drawing.Point(277, 150);
+            this.btnGo.Name = "btnGo";
+            this.btnGo.Size = new System.Drawing.Size(75, 23);
+            this.btnGo.TabIndex = 5;
+            this.btnGo.Text = "Go";
+            this.btnGo.UseVisualStyleBackColor = true;
+            this.btnGo.Click += new System.EventHandler(this.BtnGo_Click);
+            // 
             // cmbAlgorithm
             // 
             this.cmbAlgorithm.FormattingEnabled = true;
@@ -70,7 +82,7 @@
             "SHA-512"});
             this.cmbAlgorithm.Location = new System.Drawing.Point(83, 149);
             this.cmbAlgorithm.Name = "cmbAlgorithm";
-            this.cmbAlgorithm.Size = new System.Drawing.Size(269, 24);
+            this.cmbAlgorithm.Size = new System.Drawing.Size(188, 24);
             this.cmbAlgorithm.TabIndex = 4;
             // 
             // lblAlgorithm
@@ -97,8 +109,7 @@
             this.txtOriginalHash.Multiline = true;
             this.txtOriginalHash.Name = "txtOriginalHash";
             this.txtOriginalHash.Size = new System.Drawing.Size(342, 73);
-            this.txtOriginalHash.TabIndex = 1;
-            this.txtOriginalHash.TextChanged += new System.EventHandler(this.TxtOriginalHash_TextChanged);
+            this.txtOriginalHash.TabIndex = 6;
             // 
             // txtFilePath
             // 
@@ -193,6 +204,7 @@
         private System.Windows.Forms.TextBox txtSafeToUse;
         private System.Windows.Forms.Label lblSafeToUse;
         private System.Windows.Forms.Label lblResultHash;
+        private System.Windows.Forms.Button btnGo;
     }
 }
 
