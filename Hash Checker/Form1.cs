@@ -134,5 +134,14 @@ namespace Hash_Checker
                 txtSafeToUse.Text = "Not safe to use";
             }
         }
+
+        private void TxtSelectFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fdlg = new OpenFileDialog();
+            if (fdlg.ShowDialog() == DialogResult.OK)
+            {
+                txtFilePath.Text = fdlg.FileName;
+            }
+        }
     }
 }
