@@ -148,6 +148,7 @@
             // 
             this.txtSafeToUse.Location = new System.Drawing.Point(98, 22);
             this.txtSafeToUse.Name = "txtSafeToUse";
+            this.txtSafeToUse.ReadOnly = true;
             this.txtSafeToUse.Size = new System.Drawing.Size(359, 22);
             this.txtSafeToUse.TabIndex = 5;
             // 
@@ -174,6 +175,7 @@
             this.txtResultHash.Location = new System.Drawing.Point(10, 75);
             this.txtResultHash.Multiline = true;
             this.txtResultHash.Name = "txtResultHash";
+            this.txtResultHash.ReadOnly = true;
             this.txtResultHash.Size = new System.Drawing.Size(447, 73);
             this.txtResultHash.TabIndex = 2;
             // 
