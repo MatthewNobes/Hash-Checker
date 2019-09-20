@@ -143,6 +143,7 @@ namespace Hash_Checker
         private void TxtSelectFile_Click(object sender, EventArgs e)
         {
             OpenFileDialog fdlg = new OpenFileDialog();
+            fdlg.InitialDirectory = "c:\\";
             if (fdlg.ShowDialog() == DialogResult.OK)
             {
                 txtFilePath.Text = fdlg.FileName;

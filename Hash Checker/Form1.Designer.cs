@@ -59,16 +59,16 @@
             this.grbHashInfo.Controls.Add(this.lblOriginalHash);
             this.grbHashInfo.Location = new System.Drawing.Point(13, 13);
             this.grbHashInfo.Name = "grbHashInfo";
-            this.grbHashInfo.Size = new System.Drawing.Size(358, 210);
+            this.grbHashInfo.Size = new System.Drawing.Size(472, 202);
             this.grbHashInfo.TabIndex = 0;
             this.grbHashInfo.TabStop = false;
             this.grbHashInfo.Text = "Hash Information";
             // 
             // btnGo
             // 
-            this.btnGo.Location = new System.Drawing.Point(277, 181);
+            this.btnGo.Location = new System.Drawing.Point(358, 159);
             this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(75, 23);
+            this.btnGo.Size = new System.Drawing.Size(99, 30);
             this.btnGo.TabIndex = 5;
             this.btnGo.Text = "Go";
             this.btnGo.UseVisualStyleBackColor = true;
@@ -83,7 +83,7 @@
             "SHA-256",
             "SHA-384",
             "SHA-512"});
-            this.cmbAlgorithm.Location = new System.Drawing.Point(83, 149);
+            this.cmbAlgorithm.Location = new System.Drawing.Point(83, 163);
             this.cmbAlgorithm.Name = "cmbAlgorithm";
             this.cmbAlgorithm.Size = new System.Drawing.Size(269, 24);
             this.cmbAlgorithm.TabIndex = 4;
@@ -92,7 +92,7 @@
             // lblAlgorithm
             // 
             this.lblAlgorithm.AutoSize = true;
-            this.lblAlgorithm.Location = new System.Drawing.Point(10, 152);
+            this.lblAlgorithm.Location = new System.Drawing.Point(10, 166);
             this.lblAlgorithm.Name = "lblAlgorithm";
             this.lblAlgorithm.Size = new System.Drawing.Size(71, 17);
             this.lblAlgorithm.TabIndex = 3;
@@ -101,7 +101,7 @@
             // lblFilePath
             // 
             this.lblFilePath.AutoSize = true;
-            this.lblFilePath.Location = new System.Drawing.Point(10, 124);
+            this.lblFilePath.Location = new System.Drawing.Point(10, 129);
             this.lblFilePath.Name = "lblFilePath";
             this.lblFilePath.Size = new System.Drawing.Size(67, 17);
             this.lblFilePath.TabIndex = 2;
@@ -112,12 +112,12 @@
             this.txtOriginalHash.Location = new System.Drawing.Point(10, 42);
             this.txtOriginalHash.Multiline = true;
             this.txtOriginalHash.Name = "txtOriginalHash";
-            this.txtOriginalHash.Size = new System.Drawing.Size(342, 73);
+            this.txtOriginalHash.Size = new System.Drawing.Size(447, 73);
             this.txtOriginalHash.TabIndex = 6;
             // 
             // txtFilePath
             // 
-            this.txtFilePath.Location = new System.Drawing.Point(83, 121);
+            this.txtFilePath.Location = new System.Drawing.Point(83, 126);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.Size = new System.Drawing.Size(269, 22);
             this.txtFilePath.TabIndex = 1;
@@ -137,9 +137,9 @@
             this.grbResult.Controls.Add(this.lblSafeToUse);
             this.grbResult.Controls.Add(this.lblResultHash);
             this.grbResult.Controls.Add(this.txtResultHash);
-            this.grbResult.Location = new System.Drawing.Point(13, 229);
+            this.grbResult.Location = new System.Drawing.Point(13, 221);
             this.grbResult.Name = "grbResult";
-            this.grbResult.Size = new System.Drawing.Size(358, 157);
+            this.grbResult.Size = new System.Drawing.Size(472, 157);
             this.grbResult.TabIndex = 2;
             this.grbResult.TabStop = false;
             this.grbResult.Text = "Result";
@@ -148,7 +148,7 @@
             // 
             this.txtSafeToUse.Location = new System.Drawing.Point(98, 22);
             this.txtSafeToUse.Name = "txtSafeToUse";
-            this.txtSafeToUse.Size = new System.Drawing.Size(254, 22);
+            this.txtSafeToUse.Size = new System.Drawing.Size(359, 22);
             this.txtSafeToUse.TabIndex = 5;
             // 
             // lblSafeToUse
@@ -174,14 +174,14 @@
             this.txtResultHash.Location = new System.Drawing.Point(10, 75);
             this.txtResultHash.Multiline = true;
             this.txtResultHash.Name = "txtResultHash";
-            this.txtResultHash.Size = new System.Drawing.Size(342, 73);
+            this.txtResultHash.Size = new System.Drawing.Size(447, 73);
             this.txtResultHash.TabIndex = 2;
             // 
             // txtSelectFile
             // 
-            this.txtSelectFile.Location = new System.Drawing.Point(13, 181);
+            this.txtSelectFile.Location = new System.Drawing.Point(358, 121);
             this.txtSelectFile.Name = "txtSelectFile";
-            this.txtSelectFile.Size = new System.Drawing.Size(99, 23);
+            this.txtSelectFile.Size = new System.Drawing.Size(99, 32);
             this.txtSelectFile.TabIndex = 3;
             this.txtSelectFile.Text = "Select File";
             this.txtSelectFile.UseVisualStyleBackColor = true;
@@ -191,7 +191,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(383, 398);
+            this.ClientSize = new System.Drawing.Size(497, 385);
             this.Controls.Add(this.grbResult);
             this.Controls.Add(this.grbHashInfo);
             this.Name = "mainForm";
