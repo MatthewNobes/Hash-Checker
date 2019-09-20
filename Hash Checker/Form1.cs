@@ -94,6 +94,11 @@ namespace Hash_Checker
 
         private void BtnGo_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(txtFilePath.Text))
+            {
+                MessageBox.Show("Error 001: No file path entered.");
+            }
+
             //Assigns all the text boxes on the form to variables.
             string newHash = "0123456789ABCDEF";
             string OriginalHash = txtOriginalHash.Text;

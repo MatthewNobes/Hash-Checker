@@ -87,6 +87,7 @@
             this.cmbAlgorithm.Name = "cmbAlgorithm";
             this.cmbAlgorithm.Size = new System.Drawing.Size(269, 24);
             this.cmbAlgorithm.TabIndex = 4;
+            this.cmbAlgorithm.Text = "MD5";
             // 
             // lblAlgorithm
             // 
