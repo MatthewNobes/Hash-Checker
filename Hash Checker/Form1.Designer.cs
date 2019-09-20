@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.grbHashInfo = new System.Windows.Forms.GroupBox();
             this.btnGo = new System.Windows.Forms.Button();
             this.cmbAlgorithm = new System.Windows.Forms.ComboBox();
@@ -196,6 +197,7 @@
             this.ClientSize = new System.Drawing.Size(497, 385);
             this.Controls.Add(this.grbResult);
             this.Controls.Add(this.grbHashInfo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "mainForm";
             this.Text = "Hash Checker";
             this.grbHashInfo.ResumeLayout(false);
