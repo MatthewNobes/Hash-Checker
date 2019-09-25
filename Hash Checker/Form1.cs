@@ -149,5 +149,29 @@ namespace Hash_Checker
                 txtFilePath.Text = fdlg.FileName;
             }
         }
+
+        private void TxtOriginalHash_TextChanged(object sender, EventArgs e)
+        {
+            if (txtOriginalHash.Text.Length == 32)
+            {
+                cmbAlgorithm.SelectedItem = "MD5";
+            }
+            else if (txtOriginalHash.Text.Length == 40)
+            {
+                cmbAlgorithm.SelectedItem = "SHA-1";
+            }
+            else if (txtOriginalHash.Text.Length == 64)
+            {
+                cmbAlgorithm.SelectedItem = "SHA-256";
+            }
+            else if (txtOriginalHash.Text.Length == 96)
+            {
+                cmbAlgorithm.SelectedItem = "SHA-384";
+            }
+            else if (txtOriginalHash.Text.Length == 128)
+            {
+                cmbAlgorithm.SelectedItem = "SHA-512";
+            }
+        }
     }
 }
