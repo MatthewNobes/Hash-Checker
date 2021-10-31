@@ -12,4 +12,4 @@ To load this code in Visual Studio, use the standard method of loading a project
 
 ## Releases
 
-There are no releases yet.
+The lastest release is a .exe and will only work on Windows. A .NET Core version is being considered in the future.
